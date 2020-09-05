@@ -44,4 +44,10 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
+
+  def screen_user
+      unless params[:id].to_i == current_user.id
+        redirect_to user_path(current_user)
+      end
+  end
 end

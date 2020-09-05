@@ -57,4 +57,10 @@ class BooksController < ApplicationController
     end
   end
 
+  def screen_user(book)
+      unless params[:id].to_i == current_user.id
+        redirect_to book_path
+      end
+    end
+
 end
